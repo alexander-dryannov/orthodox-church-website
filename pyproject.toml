@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "orthodox-church-website"
+version = "0.1.0"
+description = "Сайт храма"
+authors = ["alexander-dryannov <l3x.d@yandex.ru>"]
+license = "GPLv3"
+readme = "README.md"
+packages = [{include = "orthodox_church_website"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.1"
+Pillow = "^9.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
