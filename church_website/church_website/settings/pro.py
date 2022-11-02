@@ -7,7 +7,7 @@ SECRET_KEY = getenv('SECRET_KEY')
 
 CSRF_COOKIE_SECURE = False
 
-ALLOWED_HOSTS = ['sergievskiyhram.ru', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
