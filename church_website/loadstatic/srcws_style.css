@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Pattaya";
+  src: url("../static/fonts/Pattaya-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+h1 {
+  font-family: "Pattaya", sans-serif;
+  color: #1e272e;
+}
+
+header nav {
+  position: relative;
+}
+header nav .nav-link {
+  color: #fff;
+  font-weight: 600;
+}
+
+.bg-srcws {
+  background: #5f27cd;
+}
+
+.text-bg-srcws {
+  background: #5f27cd;
+}
+
+.offcanvas-title {
+  color: #fff;
+}
+
+.navbar-brand {
+  font-family: "Pattaya", sans-serif;
+  color: #fff;
+}
+
+main {
+  flex-shrink: 0;
+}
+main .srcws_container {
+  padding: 0;
+  width: 90%;
+}
+main .srcws_container .last-posts {
+  height: 100%;
+  padding-bottom: 1.5rem;
+}
+main .srcws_container .last-posts .card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50rem;
+  width: 80%;
+  margin-top: 1rem;
+}
+main .srcws_container .last-posts .more-info {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .srcws_container .last-posts .more-info a {
+  margin-top: 3rem;
+}
+main .srcws_container .clergy h3 {
+  color: #fff;
+}
+main .srcws_container .contacts {
+  height: 92vh;
+  padding-top: 5%;
+}
+main .srcws_container .contacts .yandex-map {
+  margin-top: 10%;
+}
+
+.delete {
+  margin-top: 25%;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1rem 0;
+}
+.footer span {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.admin-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #4b7bec;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  right: 2rem;
+  bottom: 25%;
+}
+.admin-panel .button-collection {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  margin-top: 1rem;
+}
+.admin-panel .button-collection a {
+  margin-top: 0.5rem;
+}/*# sourceMappingURL=srcws_style.css.map */

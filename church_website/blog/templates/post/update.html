@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'srcws_style_blog.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="">
+        <h2 class="text-center mt-5 mb-2">Редактирование поста <b>{{ post.title }}</b></h2>
+        <form class="w-50 mx-auto mt-5 mb-5" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <!-- <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"><b>{{ form.title.label }}</b></label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
+                    value="{{ form.title.value }}">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">
+                    <b>{{ form.description.label }}</b>
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="15">{{ form.description.value }}</textarea>
+            </div>
+            <div class="mb-3 d-flex flex-column">
+                <label for="exampleFormControlTextarea1" class="form-label">
+                    <b>{{ form.content.label }}</b>
+                </label>
+                {{ form.content }}
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" {% if form.is_visible.value %}checked{% endif %} id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  <b>{{ form.is_visible.label }}</b>
+                </label>
+            </div>
+            <select class="form-select mb-3" multiple>
+                {% for tag in form.tags %}
+                    {{tag}}
+                {% endfor %}
+            </select> -->
+            
+            <a href="{{ post.get_absolute_url }}" class="btn btn-secondary">Отмена</a>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </section>
+{% endblock %}

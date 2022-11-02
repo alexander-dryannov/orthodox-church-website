@@ -6,6 +6,9 @@
 *.pdb
 *.sqlite3
 
+### STATIC ###
+static/
+
 ### DBeaver ###
 # ide config file
 .dbeaver-data-sources*.xml
@@ -145,6 +148,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.env_pro
 .env
 .venv
 env/

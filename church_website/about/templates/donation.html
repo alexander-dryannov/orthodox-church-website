@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="donation">
+        <h2 class="text-center mt-5 mb-5">Пожертвование</h2>
+        <p class="text-center w-50 mx-auto"><b>Местная религиозная организация "Православный приход Сергиевского храма г. Балашиха Балашихинской епархии Русской Православной Церкви (Московский Патриархат)"</b></p>
+
+        <div class="block d-flex justify-content-center">
+            <div class="qrcode align-self-center">
+                <img src="{% static 'images/qrcode.png' %}" alt="QR-code для пожертвования средств на храм" width="400">
+            </div>
+            <div class="requisites">
+                <ul class="list-group list-group-flush p-3">
+                    <li class="list-group-item"><b>ИНН:</b> 5001114031</li>
+                    <li class="list-group-item"><b>КПП:</b> 500101001</li>
+                    <li class="list-group-item"><b>ОГРН:</b> 1175000002099</li>
+                    <li class="list-group-item"><b>ОКПО:</b> 15513351</li>
+                    <li class="list-group-item"><b>Расчетный счет:</b> 40703810102140000038</li>
+                    <li class="list-group-item"><b>Банк:</b> ФИЛИАЛ "ЦЕНТРАЛЬНЫЙ" БАНКА ВТБ(ПАО)</li>
+                    <li class="list-group-item"><b>БИК:</b> 044525411</li>
+                    <li class="list-group-item"><b>Корр. счет:</b> 30101810145250000411</li>
+                    <li class="list-group-item"><b>Юридический адрес:</b> 143985, Московская обл., Балашиха г, Новый Милет с, дом №7
+                    </li>
+                    <li class="list-group-item"><b>Телефон:</b> 8-903-208-21-17</li>
+                    <li class="list-group-item"><b>Настоятель:</b> Овчинников Антон Алексеевич</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

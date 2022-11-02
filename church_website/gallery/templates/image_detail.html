@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <h2>Detail image</h2>
+    <figure class="gallery__view">
+        <img class="gallery__image_view" id="gallery__image" src="{{ albumimage.src.url }}" alt="" width="200">
+    </figure>
+    <button id="rotate-left" onclick="rotate_l()">Rotate left</button>
+    <button id="rotate-right" onclick="rotate_r()">Rotate right</button>
+    <span id="angle">0</span>
+    <button id="ok" onclick="send()">Send</button>
+{% endblock %}
+
+
+{% block custom_js %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const img = document.getElementById('gallery__image')
+        const btn_rotate_rigth = document.getElementById('rotate-right');
+        const btn_rotate_left = document.getElementById('rotate-left');
+        const span = document.getElementById('angle');
+        const btn_ok = document.getElementById('ok');
+
+        let angle = 0
+
+        function send() {
+            json = JSON.stringify({"angle": angle})
+            axios.post('http://127.0.0.1:8000/gallery/image/1bf54a3060f447acbb20aa3a9ed51329/rotate', json, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        };
+
+        function rotate_image() {
+            img.style.transform = 'rotate(' + angle + 'deg)';
+        }
+
+        function rotate_r() {
+            if (angle <= -360) {
+                angle = 0
+            } else {
+                angle -= 90
+            }
+            span.innerText = angle
+            rotate_image()
+        };
+
+        function rotate_l() {
+            if (angle >= 360) {
+                angle = 0
+            } else {
+            angle += 90
+            }
+            span.innerText = angle
+            rotate_image()
+        };
+    </script>
+{% endblock %}

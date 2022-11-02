@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'pswp/photoswipe.css' %}">
+    <link rel="stylesheet" href="{% static 'srcws_style_gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center mt-5 mb-2">{{ album.title }}</h2>
+    <div class="pswp-gallery pswp-gallery--single-column gallery mt-5" id="my-gallery">
+        {% for items in images %}
+            <div class="gallery__column">
+                {% for item in items %}
+                    <a href="{{ item.src.url }}" data-pswp-width="{{ item.origin_width }}" data-pswp-height="{{ item.origin_height }}" target="_blank" class="thmb">
+                        <img class="gallery__image" src="{{ item.src.url }}" alt="{{ item.slug }}" />
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+    <script type="module">
+        import Lightbox from "{% static 'pswp/photoswipe-lightbox.esm.min.js' %}";
+        const lightbox = new Lightbox({
+        gallery: '#my-gallery',
+        children: 'a',
+        pswpModule: () => import("{% static 'pswp/photoswipe.esm.min.js' %}")
+        });
+        lightbox.init();
+    </script>
+{% endblock %}

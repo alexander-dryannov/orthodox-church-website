@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Create</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block custom_css %}
+    <link rel="stylesheet" href="{% static 'srcws_style_gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-center mt-5 mb-2">Галерея</h2>
+    <div class="gallery mt-5 d-flex justify-content-around">
+        {% for album in albums %}
+            {% if album.is_visible %}
+                <div class="col-sm-2">
+                    <a href="{{ album.get_absolute_url }}">
+                        <img src="{{ album.cover.url }}" alt="{{ album.title }}">
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

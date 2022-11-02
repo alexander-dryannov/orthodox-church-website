@@ -1,18 +1,24 @@
 [tool.poetry]
 name = "orthodox-church-website"
 version = "0.1.0"
-description = "Сайт храма"
-authors = ["alexander-dryannov <l3x.d@yandex.ru>"]
-license = "GPLv3"
-readme = "README.md"
-packages = [{include = "orthodox_church_website"}]
+description = ""
+authors = ["Alexander Dryannov <l3x.d@yandex.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "^4.1.1"
 Pillow = "^9.2.0"
+Django = "^4.1.1"
+django-ckeditor = "^6.5.1"
+django-crispy-forms = "^1.14.0"
+crispy-bootstrap5 = "^0.7"
+python-docx = "^0.8.11"
+psycopg2 = "^2.9.5"
+gunicorn = "^20.1.0"
+python-dotenv = "^0.21.0"
 
+[tool.poetry.dev-dependencies]
+flake8 = "^5.0.4"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

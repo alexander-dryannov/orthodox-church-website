@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'srcws_style.css' %}">
+    {% block custom_css %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <!-- <div class="filter"></div> -->
+
+        <nav class="navbar navbar-dark bg-primary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Храм прп. Сергия Радонежского</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+                    aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-primary" tabindex="-1" id="offcanvasDarkNavbar"
+                    aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Меню</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about/clergy">Духовенство</a>
+                            </li>
+                        
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Новости
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url 'blog:posts' %}">Посты</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'blog:tags' %}">Теги</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'schedule:schedule' %}">Расписание</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'gallery:albums' %}">Галерея</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle disabled" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Чтение
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Евангелие дня</a></li>
+                                    <li><a class="dropdown-item" href="#">Толкование на Евангелие от Матфея</a></li>
+                                    <li><a class="dropdown-item" href="#">Толкование на Евангелие от Марка</a></li>
+                                    <li><a class="dropdown-item" href="#">Толкование на Евангелие от Иоанна</a></li>
+                                    <li><a class="dropdown-item" href="#">Толкование на Евангелие от Луки</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Толкование на Библию</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about/donation">Пожертвование</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about/contacts">Контакты</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex mt-3" role="search" {% block search_action %}{% endblock %}>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- <nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/clergy">Духовенство</a>
+                        </li>
+        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Новости
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'blog:posts' %}">Посты</a></li>
+                                <li><a class="dropdown-item" href="{% url 'blog:tags' %}">Теги</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'schedule:schedule' %}">Расписание</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'gallery:albums' %}">Галерея</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle disabled" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Чтение
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Евангелие дня</a></li>
+                                <li><a class="dropdown-item" href="#">Толкование на Евангелие от Матфея</a></li>
+                                <li><a class="dropdown-item" href="#">Толкование на Евангелие от Марка</a></li>
+                                <li><a class="dropdown-item" href="#">Толкование на Евангелие от Иоанна</a></li>
+                                <li><a class="dropdown-item" href="#">Толкование на Евангелие от Луки</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Толкование на Библию</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/donation">Пожертвование</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about/contacts">Контакты</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav> -->
+        {% block start %}
+        {% endblock %}
+    </header>
+    <main class="mt-5">
+        <h1 class="header-logo text-center mt-5">Храм преподобного Сергия Радонежского<br>г.Балашиха, мкр. северное
+            Кучино</h1>
+        {% if request.user.is_staff %}
+            <div class="admin-panel mx-auto">
+                <h5 class="card-title text-center text-muted">Admin panel</h5>
+                <div class="button-collection">
+                    <a href="/admin" class="btn btn-light text-center">Админ</a>
+                    <div class="btn-group mt-2">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Создать
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'blog:post_create' %}">Пост</a></li>
+                            <li><a class="dropdown-item" href="{% url 'blog:tag_create' %}">Тег</a></li>
+                            <li><a class="dropdown-item" href="{% url 'gallery:album_create' %}">Альбом</a></li>
+                            <li><a class="dropdown-item" href="{% url 'schedule:schedule_create' %}">Расписание</a></li>
+                        </ul>
+                    </div>
+                    <a href="{{ obj.get_update_url }}" class="btn btn-warning text-center {% if not detail %}disabled{% endif %}">Редактировать</a>
+                    <a href="{{ obj.get_delete_url }}" class="btn btn-danger text-center {% if not detail %}disabled{% endif %}">Удалить</a>
+                </div>
+            </div>
+        {% endif %}
+        <div class="container-fluid srcws_container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer class="footer bg-srcws">
+        <div class="container">
+            <span>Храм Святого Преподобного Сергия Радонежского. Балашихинская и Орехово-Зуевская епархия. Балашихинское
+                благочиние Русской Православной церкви.</span>
+        </div>
+    </footer>
+
+    <script src="{% static 'bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+
+    {% block custom_js %}{% endblock %}
+
+</body>
+
+</html>

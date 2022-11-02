@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="delete">
+        <div class="card text-center w-50 mx-auto border-0">
+            <div class="card-body">
+                <p class="card-text">Вы действительно хотите удалить тег <b>{{ tag.tag }}</b>?</p>
+                <form class="post_create" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <a href="{{ tag.get_absolute_url }}" class="btn btn-secondary">Отмена</a>
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

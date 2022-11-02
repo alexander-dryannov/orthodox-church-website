@@ -1,0 +1,19 @@
+.admin-panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4b7bec;
+    border-radius: .5rem;
+    padding: 0.4rem;
+    right: 4rem;
+    bottom: 25%;
+    .button-collection {
+        display: flex;
+        flex-direction: column;
+        width: 8rem;
+        margin-top: 1rem;
+        a {
+            margin-top: 0.5rem;
+        }
+    }
+}
