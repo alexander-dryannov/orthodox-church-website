@@ -1,6 +1,9 @@
 from .base import *
+from os import getenv
 
 DEBUG = True
+
+SECRET_KEY = getenv('SECRET_KEY')
 
 ALLOWED_HOSTS = []
 

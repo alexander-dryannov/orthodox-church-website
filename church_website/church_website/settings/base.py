@@ -6,8 +6,6 @@ load_dotenv(find_dotenv('.env_pro'))
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = getenv('SECRET_KEY')
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
