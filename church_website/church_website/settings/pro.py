@@ -1,6 +1,8 @@
 from .base import *
 from os import getenv
 
+load_dotenv(find_dotenv('.env_pro'))
+
 DEBUG = False
 
 SECRET_KEY = getenv('SECRET_KEY')

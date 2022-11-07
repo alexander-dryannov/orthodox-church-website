@@ -11,7 +11,6 @@ class BaseModel(models.Model):
     is_visible = models.BooleanField('Видимость', default=True)
 
     def save(self, *args, **kwargs):
-        x = 100/0
         if not self.id:
             self.slug = uuid4().hex
         return super().save(*args, **kwargs)
