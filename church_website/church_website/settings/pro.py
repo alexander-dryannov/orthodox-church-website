@@ -5,9 +5,7 @@ DEBUG = False
 
 SECRET_KEY = getenv('SECRET_KEY')
 
-CSRF_COOKIE_SECURE = False
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your_domain']
 
 DATABASES = {
     'default': {
