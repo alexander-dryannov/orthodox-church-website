@@ -5,7 +5,7 @@ load_dotenv(find_dotenv('.env_local'))
 
 DEBUG = True
 
-SECRET_KEY = getenv('SECRET_KEY')
+SECRET_KEY = 'RPtE"<^s{IJ]~a0-LSe$__nDIih}G25*kI>y@h!9Jr^uo*P|vT'
 
 ALLOWED_HOSTS = []
 
