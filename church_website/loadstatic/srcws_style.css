@@ -15,29 +15,22 @@ body {
   background: #fff;
 }
 
-h1 {
-  font-family: "Pattaya", sans-serif;
-  color: #1e272e;
-}
-
-header nav {
-  position: relative;
+header nav .navbar-brand {
+  margin-left: 1rem;
 }
 header nav .nav-link {
   color: #fff;
   font-weight: 600;
 }
+header .header-logo {
+  font-family: "Pattaya", sans-serif;
+  color: #2d272e;
+  text-align: center;
+  margin-top: 5rem;
+}
 
 .bg-srcws {
-  background: #5f27cd;
-}
-
-.text-bg-srcws {
-  background: #5f27cd;
-}
-
-.offcanvas-title {
-  color: #fff;
+  background: #447cb6;
 }
 
 .navbar-brand {
@@ -48,43 +41,33 @@ header nav .nav-link {
 main {
   flex-shrink: 0;
 }
-main .srcws_container {
-  padding: 0;
-  width: 90%;
-}
-main .srcws_container .last-posts {
-  height: 100%;
-  padding-bottom: 1.5rem;
-}
-main .srcws_container .last-posts .card {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50rem;
-  width: 80%;
-  margin-top: 1rem;
-}
-main .srcws_container .last-posts .more-info {
-  display: flex;
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-main .srcws_container .last-posts .more-info a {
-  margin-top: 3rem;
-}
-main .srcws_container .clergy h3 {
-  color: #fff;
-}
-main .srcws_container .contacts {
-  height: 92vh;
-  padding-top: 5%;
-}
-main .srcws_container .contacts .yandex-map {
-  margin-top: 10%;
+main .container {
+  border-radius: 1rem;
 }
 
-.delete {
-  margin-top: 25%;
+.post-create #div_id_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-albums a img {
+  width: 16rem;
+}
+
+#my-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+#my-gallery .gallery__column {
+  text-align: center;
+  max-width: 30%;
+}
+#my-gallery .gallery__column .gallery__image {
+  max-width: 100%;
+  padding: 0.3rem;
 }
 
 .footer {
@@ -92,9 +75,7 @@ main .srcws_container .contacts .yandex-map {
   padding: 1rem 0;
 }
 .footer span {
-  display: inline-block;
   font-size: 1.2rem;
-  text-align: center;
   color: #fff;
 }
 

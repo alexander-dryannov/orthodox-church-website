@@ -1,0 +1,10 @@
+<div class="card w-75 mt-3 mb-2 mx-auto">
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.description | truncatewords:30 }}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Читать</a>
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-around">
+        <span class="d-flex">{{ post.created_at }}</span>
+    </div>
+</div>

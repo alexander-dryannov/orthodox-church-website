@@ -1,27 +1,30 @@
 {% extends "index.html" %}
 
+{% block section_title %}
+    Контакты
+{% endblock %}
+
+{% block className %}
+    "contacts"
+{% endblock %}
+
 {% block content %}
-    <section class="contacts" id="scrollspyContacts">
-        <h2 class="text-center mt-5 mb-2">Контакты</h2>
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Адрес:</b> 143982, Московская область, город Балашиха,
-                            Гидрогородок, 4</li>
-                        <li class="list-group-item"><b>Телефон:</b> +7(495)642-63-09</li>
-                        <li class="list-group-item"><b>Мобильный телефон:</b> 8-926-598-87-64</li>
-                        <li class="list-group-item"><b>Эл. почта:</b> anton3082@mail.ru</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-8">
-                    <div class="yandex-map">
-                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0ab47f02fd032c933bad3812c4fe14a546e613a37b694590da13b4b2dbe71c4a&amp;width=100%25&amp;height=389&amp;lang=ru_RU&amp;scroll=true"></script>
-                    </div>
-                </div>
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Адрес:</b> 143982, Московская область, город Балашиха,
+                    Гидрогородок, 4</li>
+                <li class="list-group-item"><b>Телефон:</b> +7(495)642-63-09</li>
+                <li class="list-group-item"><b>Мобильный телефон:</b> 8-926-598-87-64</li>
+                <li class="list-group-item"><b>Эл. почта:</b> anton3082@mail.ru</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-sm-8">
+            <div class="yandex-map">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0ab47f02fd032c933bad3812c4fe14a546e613a37b694590da13b4b2dbe71c4a&amp;width=100%25&amp;height=389&amp;lang=ru_RU&amp;scroll=true"></script>
             </div>
         </div>
-    </section>
+    </div>
 {% endblock %}

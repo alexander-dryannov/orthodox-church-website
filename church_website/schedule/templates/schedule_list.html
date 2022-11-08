@@ -1,8 +1,15 @@
 {% extends "index.html" %}
 
+{% block section_title %}
+    Расписание богослужений
+{% endblock %}
+
+{% block className %}
+    "schedule"
+{% endblock %}
+
 {% block content %}
-    <h2 class="text-center mt-5 mb-2">Расписание богослужений</h2>
-    <div class="list-group mt-5 mx-auto w-50 text-center">
+    <div class="list-group mx-auto w-50 text-center">
         {% for s in schedule %}
             <a href="{{ s.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="true">
                 {{s.title}}

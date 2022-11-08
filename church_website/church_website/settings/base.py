@@ -101,7 +101,7 @@ CKEDITOR_CONFIGS = {
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],
-        'toolbar_YourCustomToolbarConfig': [
+        'toolbar_sergievskiy': [
             {
                 'name': 'document',
                 'items': [
@@ -200,8 +200,8 @@ CKEDITOR_CONFIGS = {
                     ]
             },
         ],
-        'toolbar': 'YourCustomToolbarConfig',
-        'width': '100%',
+        'toolbar': 'sergievskiy',
+        'width': 'full',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage',

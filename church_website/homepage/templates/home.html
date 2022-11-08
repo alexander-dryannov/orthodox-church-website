@@ -1,45 +1,33 @@
 {% extends "index.html" %}
 
+{% block section_title %}
+    Последние новости
+{% endblock %}
+
+{% block className %}
+    "last-posts"
+{% endblock %}
+
 {% block content %}
-    <section class="last-posts" id="scrollspyLastPosts">
-        <h3 class="text-center pt-3 pb-4">Последние новости</h3>
-        {% for post in posts %}
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ post.title}}</h5>
-                    <p class="card-text">{{ post.description | truncatewords:40 }}</p>
-                    <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Читать</a>
-                </div>
-                <div class="card-footer text-muted">
-                    {{ post.created_at }}
-                </div>
-            </div>
-        {% endfor %}
-        <div class="more-info">
-            <a href="{% url 'blog:posts' %}" class="btn btn-primary">Больше новостей...</a>
-        </div>
-    </section>
-    <!-- <section class="contacts" id="scrollspyContacts">
-        <h3 class="text-center pt-3 pb-4">Контакты</h3>
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Адрес:</b> 143982, Московская область, город Балашиха,
-                            Гидрогородок, 4</li>
-                        <li class="list-group-item"><b>Телефон:</b> +7(495)642-63-09</li>
-                        <li class="list-group-item"><b>Мобильный телефон:</b> 8-926-598-87-64</li>
-                        <li class="list-group-item"><b>Эл. почта:</b> anton3082@mail.ru</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-8">
-                    <div class="yandex-map">
-                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0ab47f02fd032c933bad3812c4fe14a546e613a37b694590da13b4b2dbe71c4a&amp;width=100%25&amp;height=389&amp;lang=ru_RU&amp;scroll=true"></script>
+    {% for post in posts %}
+        <div class="row">
+            <div class="col">
+                <div class="card w-50 text-center mt-3 mb-2 mx-auto">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title}}</h5>
+                        <p class="card-text">{{ post.description | truncatewords:40 }}</p>
+                        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Читать</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{ post.created_at }}
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    {% endfor %}
+    <div class="row text-center">
+        <div class="col">
+            <a href="{% url 'blog:posts' %}" class="btn btn-primary">Больше новостей...</a>
+        </div>
+    </div>
 {% endblock %}

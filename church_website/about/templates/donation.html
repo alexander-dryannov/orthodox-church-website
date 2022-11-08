@@ -1,15 +1,28 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block content %}
-    <section class="donation">
-        <h2 class="text-center mt-5 mb-5">Пожертвование</h2>
-        <p class="text-center w-50 mx-auto"><b>Местная религиозная организация "Православный приход Сергиевского храма г. Балашиха Балашихинской епархии Русской Православной Церкви (Московский Патриархат)"</b></p>
+{% block section_title %}
+    Пожертвование
+{% endblock %}
 
-        <div class="block d-flex justify-content-center">
+{% block className %}
+    "donation"
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <p class="text-center w-50 mx-auto"><b>Местная религиозная организация "Православный приход Сергиевского храма г. Балашиха Балашихинской епархии Русской Православной Церкви (Московский Патриархат)"</b></p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col text-center align-self-center">
             <div class="qrcode align-self-center">
                 <img src="{% static 'images/qrcode.png' %}" alt="QR-code для пожертвования средств на храм" width="400">
             </div>
+        </div>
+        <div class="col">
             <div class="requisites">
                 <ul class="list-group list-group-flush p-3">
                     <li class="list-group-item"><b>ИНН:</b> 5001114031</li>
@@ -27,6 +40,5 @@
                 </ul>
             </div>
         </div>
-
-    </section>
+    </div>
 {% endblock %}

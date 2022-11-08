@@ -54,26 +54,11 @@ def calc(i: int, column: int = 3) -> tuple:
 
 def create_image_column(l: list) -> list:
     ll = len(l)
-    print(l, ll)
     if ll < 6:
         return [l]
     elif 6 <= ll < 19:
-        match ll:
-            case 6:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
-            case 9:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
-            case 12:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
-            case 15:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
-            case 18:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
+        x, y = calc(ll, 3)
+        return [l[:x], l[x:y], l[y:]]
     elif ll >= 19:
         match column_calc(ll):
             case 4:

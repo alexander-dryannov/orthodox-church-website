@@ -1,95 +1,103 @@
 {% extends "index.html" %}
 {% load static %}
 
+{% block section_title %}
+    Духовенство
+{% endblock %}
+
+{% block className %}
+    "clergy"
+{% endblock %}
+
 {% block content %}
-    <section class="clergy" id="scrollspyClergy">
-        <h2 class="text-center mt-5 mb-5">Духовенство</h2>
-        <div class="container">
-            <div class="clerg p-3">
-                <div class="card border-0" style="max-width: 65rem;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="{% static 'images/Ovchinnikov-Antonij.jpg' %}" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Cвященник Антоний Алексеевич Овчинников, настоятель
-                                    храма.</h5>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Светское образование</b>
-                                    <li class="list-group-item">среднее специальное 2002 – медучилище</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Духовное образование</b>
-                                    <li class="list-group-item">семинария 2012 – КПДС</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Хиротонисан</b>
-                                    <li class="list-group-item">28 мая 2009<br>
-                                        Архиепископом Можайским Григорием в Смоленском соборе Новодевичьего
-                                        монастыря г. Москвы</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>День тезоименитства</b>
-                                    <li class="list-group-item">20 декабря</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Награды</b>
-                                    <li class="list-group-item">2016 камилавка</li>
-                                    <li class="list-group-item">2012 набедренник</li>
-                                </ul>
-                            </div>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card border-0" style="max-width: 65rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Ovchinnikov-Antonij.jpg' %}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Cвященник Антоний Алексеевич Овчинников, настоятель
+                                храма.</h5>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Светское образование</b>
+                                <li class="list-group-item">среднее специальное 2002 – медучилище</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Духовное образование</b>
+                                <li class="list-group-item">семинария 2012 – КПДС</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Хиротонисан</b>
+                                <li class="list-group-item">28 мая 2009<br>
+                                    Архиепископом Можайским Григорием в Смоленском соборе Новодевичьего
+                                    монастыря г. Москвы</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>День тезоименитства</b>
+                                <li class="list-group-item">20 декабря</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Награды</b>
+                                <li class="list-group-item">2016 камилавка</li>
+                                <li class="list-group-item">2012 набедренник</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="clerg p-3">
-                <div class="card border-0" style="max-width: 65rem;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="{% static 'images/Lebedev-Oleg.jpg' %}" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Протоиерей Олег Лебедев</h5>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Светское образование</b>
-                                    <li class="list-group-item">высшее 1994 – КГУ</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Духовное образование</b>
-                                    <li class="list-group-item">семинария 2010 – Тобольская ДС</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Хиротонисан</b>
-                                    <li class="list-group-item">23 июля 1996<br>
-                                        Епископом Уральским и Гурьевским Антонием в Михаило-Архангельском соборе
-                                        г. Уральска</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>День тезоименитства</b>
-                                    <li class="list-group-item">3 октября</li>
-                                </ul>
-                                <ul class="list-group list-group-flush p-3">
-                                    <b>Награды</b>
-                                    <li class="list-group-item">2020 крест с украшениями</li>
-                                    <li class="list-group-item">2016 грамота Благодарственная митрополита
-                                        Крутицкого и Коломенского Ювеналия</li>
-                                    <li class="list-group-item">2013 палица</li>
-                                    <li class="list-group-item">2013 медаль «В память 10-летия учреждения
-                                        Казахстанского митрополичьего округа»</li>
-                                    <li class="list-group-item">2007 протоиерейство</li>
-                                    <li class="list-group-item">2002 набедренник награждение не
-                                        задокументировано</li>
-                                    <li class="list-group-item">2002 наперсный крест</li>
-                                    <li class="list-group-item">2002 камилавка награждение не задокументировано
-                                    </li>
-                                </ul>
-                            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card border-0" style="max-width: 65rem;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{% static 'images/Lebedev-Oleg.jpg' %}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Протоиерей Олег Лебедев</h5>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Светское образование</b>
+                                <li class="list-group-item">высшее 1994 – КГУ</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Духовное образование</b>
+                                <li class="list-group-item">семинария 2010 – Тобольская ДС</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Хиротонисан</b>
+                                <li class="list-group-item">23 июля 1996<br>
+                                    Епископом Уральским и Гурьевским Антонием в Михаило-Архангельском соборе
+                                    г. Уральска</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>День тезоименитства</b>
+                                <li class="list-group-item">3 октября</li>
+                            </ul>
+                            <ul class="list-group list-group-flush p-3">
+                                <b>Награды</b>
+                                <li class="list-group-item">2020 крест с украшениями</li>
+                                <li class="list-group-item">2016 грамота Благодарственная митрополита
+                                    Крутицкого и Коломенского Ювеналия</li>
+                                <li class="list-group-item">2013 палица</li>
+                                <li class="list-group-item">2013 медаль «В память 10-летия учреждения
+                                    Казахстанского митрополичьего округа»</li>
+                                <li class="list-group-item">2007 протоиерейство</li>
+                                <li class="list-group-item">2002 набедренник награждение не
+                                    задокументировано</li>
+                                <li class="list-group-item">2002 наперсный крест</li>
+                                <li class="list-group-item">2002 камилавка награждение не задокументировано
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-    </section>
+        </div>
+    </div>
 {% endblock %}

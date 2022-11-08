@@ -11,8 +11,8 @@ $violet: #5f27cd;
 $gold: #fed330;
 $green: #26de81;
 $red: #ff3f34;
-$blue: #4b7bec;
-$black: #1e272e;
+$blue: #447cb6;
+$black: #2d272e;
 
 // STYLE
 html {
@@ -24,87 +24,84 @@ body {
     flex-direction: column;
     background: #fff;
 }
-h1 {
-    font-family: 'Pattaya', sans-serif;
-    color: $black;
 
-}
+// HEADER
 header {
     nav {
-        position: relative;
+        .navbar-brand {
+            margin-left: 1rem;
+        }
         .nav-link {
             color: #fff;
             font-weight: 600;
         }
     }
+    .header-logo {
+        font-family: 'Pattaya', sans-serif;
+        color: $black;
+        text-align: center;
+        margin-top: 5rem;
+    }
 }
 .bg-srcws {
-    background: $violet;
-}
-.text-bg-srcws {
-    background: $violet;
-}
-.offcanvas-title {
-    color: #fff;
+    background: $blue;
 }
 .navbar-brand {
     font-family: 'Pattaya', sans-serif;
     color: #fff;
 }
+
+// MAIN
 main {
     flex-shrink: 0;
-    .srcws_container {
-        padding: 0;
-        width: 90%;
-        .last-posts {
-            height: 100%;
-            padding-bottom: 1.5rem;
-            .card {
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 50rem;
-                width: 80%;
-                margin-top: 1rem;
-            }
-            .more-info {
-                display: flex;
-                justify-content: center;
-                margin-right: auto;
-                margin-left: auto;
-                a {
-                    margin-top: 3rem;
-                }
-            }
-        }
-        .clergy {
-            h3 {
-                color: #fff;
-            }
-        }
-        .contacts {
-            height: 92vh;
-            padding-top: 5%;
-            
-            .yandex-map {
-                margin-top: 10%;
-            }
+    .container {
+        // background: #fed330;
+        border-radius: 1rem;
+    }
+}
+
+// BLOG
+.post-create {
+    #div_id_content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+// GALLERY
+.gallery-albums {
+    a {
+        img {
+            width: 16rem;
         }
     }
 }
-.delete {
-    margin-top: 25%;
+#my-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    .gallery__column {
+        text-align: center;
+        max-width: 30%;
+        .gallery__image {
+            max-width: 100%;
+            padding: 0.3rem;
+        }
+    }
 }
+
+// FOOTER
 .footer {
     margin-top: auto;
     padding: 1rem 0;
     span {
-        display: inline-block;
         font-size: 1.2rem;
-        text-align: center;
         color: #fff;
     }
 }
 
+// ADMIN PANEL
 .admin-panel {
     position: absolute;
     display: flex;

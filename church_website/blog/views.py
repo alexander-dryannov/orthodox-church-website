@@ -82,9 +82,9 @@ class TagDetailView(DetailView):
 
 
 class TagCreateView(LoginRequiredMixin, CreateView):
-    model = Post
+    model = Tag
     template_name = 'tag/create.html'
-    fields = ['title', 'content', 'description', 'tags', 'is_visible']
+    fields = ['tag', 'is_visible']
     success_url = reverse_lazy('blog:posts')
     raise_exception = True
 

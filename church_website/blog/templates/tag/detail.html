@@ -1,9 +1,16 @@
 {% extends "index.html" %}
 
+{% block section_title %}
+    Посты с тегом <b>{{ tag.tag }}</b>:
+{% endblock %}
+
+{% block className %}
+    "tag-detail"
+{% endblock %}
+
 {% block content %}
-    <h2 class="text-center mt-5 mb-2">Посты с тегом <b>{{ tag.tag }}</b>:</h2>
     {% for post in tag.posts.all %}
-        <div class="card w-50 mt-5 mb-5 mx-auto p-0">
+        <div class="card w-50 mb-3 mx-auto">
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="card-text">{{ post.description | truncatewords:30 }}</p>

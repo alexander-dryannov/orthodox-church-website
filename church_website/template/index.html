@@ -14,9 +14,7 @@
 
 <body>
     <header>
-        <!-- <div class="filter"></div> -->
-
-        <nav class="navbar navbar-dark bg-primary fixed-top">
+        <!-- <nav class="navbar navbar-dark bg-primary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Храм прп. Сергия Радонежского</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
@@ -85,10 +83,11 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
-        <!-- <nav class="navbar navbar-dark navbar-expand-lg bg-primary fixed-top">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-srcws fixed-top">
             <div class="container-fluid">
+                <a class="navbar-brand" href="/">Храм прп. Сергия Радонежского</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -99,7 +98,7 @@
                             <a class="nav-link active" aria-current="page" href="/">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about/clergy">Духовенство</a>
+                            <a class="nav-link" href="{% url 'about:clergy' %}">Духовенство</a>
                         </li>
         
                         <li class="nav-item dropdown">
@@ -136,10 +135,10 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about/donation">Пожертвование</a>
+                            <a class="nav-link" href="{% url 'about:donation' %}">Пожертвование</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about/contacts">Контакты</a>
+                            <a class="nav-link" href="{% url 'about:contacts' %}">Контакты</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -148,44 +147,47 @@
                     </form>
                 </div>
             </div>
-        </nav> -->
-        {% block start %}
-        {% endblock %}
-    </header>
-    <main class="mt-5">
-        <h1 class="header-logo text-center mt-5">Храм преподобного Сергия Радонежского<br>г.Балашиха, мкр. северное
+        </nav>
+        <h1 class="header-logo">Храм преподобного Сергия Радонежского<br>г.Балашиха, мкр. северное
             Кучино</h1>
-        {% if request.user.is_staff %}
-            <div class="admin-panel mx-auto">
-                <h5 class="card-title text-center text-muted">Admin panel</h5>
-                <div class="button-collection">
-                    <a href="/admin" class="btn btn-light text-center">Админ</a>
-                    <div class="btn-group mt-2">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Создать
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'blog:post_create' %}">Пост</a></li>
-                            <li><a class="dropdown-item" href="{% url 'blog:tag_create' %}">Тег</a></li>
-                            <li><a class="dropdown-item" href="{% url 'gallery:album_create' %}">Альбом</a></li>
-                            <li><a class="dropdown-item" href="{% url 'schedule:schedule_create' %}">Расписание</a></li>
-                        </ul>
+    </header>
+    <main class="mt-3 mb-5">
+        <!-- COMMENT ADMIN PANEL -->
+        {% comment %}
+            {% if request.user.is_staff %}
+                <div class="admin-panel mx-auto">
+                    <h5 class="card-title text-center text-muted">Admin panel</h5>
+                    <div class="button-collection">
+                        <a href="/admin" class="btn btn-light text-center">Админ</a>
+                        <div class="btn-group mt-2">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Создать
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'blog:post_create' %}">Пост</a></li>
+                                <li><a class="dropdown-item" href="{% url 'blog:tag_create' %}">Тег</a></li>
+                                <li><a class="dropdown-item" href="{% url 'gallery:album_create' %}">Альбом</a></li>
+                                <li><a class="dropdown-item" href="{% url 'schedule:schedule_create' %}">Расписание</a></li>
+                            </ul>
+                        </div>
+                        <a href="{{ obj.get_update_url }}" class="btn btn-warning text-center {% if not detail %}disabled{% endif %}">Редактировать</a>
+                        <a href="{{ obj.get_delete_url }}" class="btn btn-danger text-center {% if not detail %}disabled{% endif %}">Удалить</a>
                     </div>
-                    <a href="{{ obj.get_update_url }}" class="btn btn-warning text-center {% if not detail %}disabled{% endif %}">Редактировать</a>
-                    <a href="{{ obj.get_delete_url }}" class="btn btn-danger text-center {% if not detail %}disabled{% endif %}">Удалить</a>
                 </div>
-            </div>
-        {% endif %}
-        <div class="container-fluid srcws_container">
-            {% block content %}
-            {% endblock %}
+            {% endif %}
+        {% endcomment %}
+        <!-- END COMMENT -->
+        <div class="container p-3">
+            <section class={% block className %}{% endblock %}>
+                <h2 class="text-center mb-5">{% block section_title %}{% endblock %}</h2>
+                {% block content %}
+                {% endblock %}
+            </section>
         </div>
     </main>
-    <footer class="footer bg-srcws">
-        <div class="container">
+    <footer class="footer bg-srcws text-center">
             <span>Храм Святого Преподобного Сергия Радонежского. Балашихинская и Орехово-Зуевская епархия. Балашихинское
                 благочиние Русской Православной церкви.</span>
-        </div>
     </footer>
 
     <script src="{% static 'bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js' %}"></script>
