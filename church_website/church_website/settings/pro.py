@@ -7,7 +7,7 @@ DEBUG = False
 
 SECRET_KEY = getenv('SECRET_KEY')
 
-ALLOWED_HOSTS = ['your_domain']
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS').split(',')
 
 DATABASES = {
     'default': {
