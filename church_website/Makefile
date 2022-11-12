@@ -8,7 +8,7 @@ makemigrate:
 	python manage.py makemigrations --settings=church_website.settings.pro
 
 cstatic:
-	python manage.py collectstatic --settings=church_website.settings.pro
+	python manage.py collectstatic --settings=church_website.settings.local
 
 add-admin:
 	python manage.py createsuperuser --settings=church_website.settings.pro
@@ -24,9 +24,6 @@ migrate-dev:
 
 makemigrate-dev:
 	python manage.py makemigrations --settings=church_website.settings.local
-
-csstatic-dev:
-	python manage.py collectstatic --settings=church_website.settings.local
 
 add-admin-dev:
 	python manage.py createsuperuser --settings=church_website.settings.local

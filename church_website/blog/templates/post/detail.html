@@ -13,7 +13,7 @@
         <label for="text-range" class="form-label mx-auto">Изменить размер шрифта</label>
         <input type="range" class="form-range w-50 mx-auto" min="1" max="4" step="0.2" id="text-range" value="1">
     </div>
-    <div class="card w-75 mb-5 mx-auto p-0 border-0">
+    <div class="card mb-5 mx-auto p-0 border-0">
         <div class="card-body">
             <p class="card-text">{{ post.content | safe }}</p>
         </div>
@@ -29,6 +29,8 @@
 
 {% block custom_js %}
     <script>
+        // RESIZE TEXT
+
         const text = document.querySelector(".card-body")
         const input = document.querySelector(".form-range")
 
@@ -36,5 +38,35 @@
             let value = input.value;
             text.style.fontSize = `${value}rem`;
         });
+
+        // RESIZE HORIZONTAL IMAGES
+
+        const images = document.getElementsByTagName('img')
+        const card = document.querySelector('.card')
+        const startWidth = card.getBoundingClientRect().width
+
+        function changeSizeImage(cardWidth) {
+            for (image of images) {
+                if (image.style.width > image.style.height) {
+                    image.style.width = `${cardWidth - (cardWidth / 100) * 10}px`;
+                    image.style.height = `${cardWidth / 2}px`;
+                }
+            }
+        }
+
+        function resize_info(ccs) {
+            const cardWidth = ccs.getBoundingClientRect().width;
+            changeSizeImage(cardWidth);
+        }
+
+        changeSizeImage(startWidth)
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            window.onresize = function () {
+                const currentCardSize = document.querySelector('.card');
+                resize_info(currentCardSize);
+            }
+        });
+
     </script>
 {% endblock %}

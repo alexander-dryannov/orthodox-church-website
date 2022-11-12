@@ -42,7 +42,7 @@ main {
   flex-shrink: 0;
 }
 main .container {
-  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .post-create #div_id_content {
@@ -97,4 +97,52 @@ main .container {
 }
 .admin-panel .button-collection a {
   margin-top: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 0.8rem;
+  }
+  main .container {
+    padding: 0px;
+    max-width: 100%;
+  }
+  .card {
+    max-width: 100%;
+    width: 98%;
+  }
+  .card .card-body p {
+    max-width: 100%;
+  }
+  .card .card-body p img {
+    width: 200px;
+  }
+}
+@media (min-width: 768px) {
+  main .container {
+    padding: 0px;
+  }
+  .card {
+    max-width: 100%;
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  main .container {
+    max-width: 90%;
+    padding: 1px;
+  }
+  .card {
+    max-width: 100%;
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  main .container {
+    max-width: 80%;
+  }
+  .card {
+    max-width: 100%;
+    width: 65%;
+  }
 }/*# sourceMappingURL=srcws_style.css.map */

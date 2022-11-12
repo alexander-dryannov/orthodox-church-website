@@ -55,8 +55,7 @@ header {
 main {
     flex-shrink: 0;
     .container {
-        // background: #fed330;
-        border-radius: 1rem;
+        padding: 1rem;
     }
 }
 
@@ -119,5 +118,70 @@ main {
         a {
             margin-top: 0.5rem;
         }
+    }
+}
+// Small devices (landscape phones, 576px and up)
+
+@media (min-width: 576px) {
+    html {
+        font-size: 0.8rem;
+    }
+    main {
+        .container {
+            padding: 0px;
+            max-width: 100%;
+        }
+    }
+    .card {
+        max-width: 100%;
+        width: 98%;
+        .card-body {
+            p {
+                max-width: 100%;
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    main {
+        .container {
+            padding: 0px;
+        }
+    }
+    .card {
+        max-width: 100%;
+        width: 80%;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    main {
+        .container {
+            max-width: 90%;
+            padding: 1px;
+        }
+    }
+    .card {
+        max-width: 100%;
+        width: 70%;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    main {
+        .container {
+            max-width: 80%;
+        }
+    }
+    .card {
+        max-width: 100%;
+        width: 65%;
     }
 }
