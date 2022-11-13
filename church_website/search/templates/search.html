@@ -18,7 +18,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <h3 class="text-center">Тегов найдено: {{ tag | length }}</h3>
+            <h3 class="text-center">Тегов найдено: {{ tags | length }}</h3>
             {% for tag in tags %}
                 <h4>{{forloop.counter}}. <a href="{{ tag.get_absolute_url }}">{{ tag.tag}}</a></h4>
             {% endfor %}

@@ -79,32 +79,33 @@
         <h1 class="header-logo">Храм преподобного Сергия Радонежского<br>г.Балашиха, мкр. северное
             Кучино</h1>
     </header>
+    {% if request.user.is_staff %}
+        <div class="admin-panel mx-auto">
+            <h5 class="card-title text-center text-muted">Admin panel</h5>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/admin">Админка</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-success" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">Создать</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'blog:post_create' %}">Пост</a></li>
+                        <li><a class="dropdown-item" href="{% url 'blog:tag_create' %}">Тег</a></li>
+                        <li><a class="dropdown-item" href="{% url 'gallery:album_create' %}">Альбом</a></li>
+                        <li><a class="dropdown-item" href="{% url 'schedule:schedule_create' %}">Расписание</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ obj.get_update_url }}" class="nav-link text-warning text-center {% if not detail %}disabled{% endif %}">Редактировать</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ obj.get_delete_url }}" class="nav-link text-danger text-center {% if not detail %}disabled{% endif %}">Удалить</a>
+                </li>
+            </ul>
+        </div>
+    {% endif %}
     <main class="mt-3 mb-5">
-        <!-- COMMENT ADMIN PANEL -->
-        {% comment %}
-            {% if request.user.is_staff %}
-                <div class="admin-panel mx-auto">
-                    <h5 class="card-title text-center text-muted">Admin panel</h5>
-                    <div class="button-collection">
-                        <a href="/admin" class="btn btn-light text-center">Админ</a>
-                        <div class="btn-group mt-2">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Создать
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'blog:post_create' %}">Пост</a></li>
-                                <li><a class="dropdown-item" href="{% url 'blog:tag_create' %}">Тег</a></li>
-                                <li><a class="dropdown-item" href="{% url 'gallery:album_create' %}">Альбом</a></li>
-                                <li><a class="dropdown-item" href="{% url 'schedule:schedule_create' %}">Расписание</a></li>
-                            </ul>
-                        </div>
-                        <a href="{{ obj.get_update_url }}" class="btn btn-warning text-center {% if not detail %}disabled{% endif %}">Редактировать</a>
-                        <a href="{{ obj.get_delete_url }}" class="btn btn-danger text-center {% if not detail %}disabled{% endif %}">Удалить</a>
-                    </div>
-                </div>
-            {% endif %}
-        {% endcomment %}
-        <!-- END COMMENT -->
         <div class="container">
             <section class={% block className %}{% endblock %}>
                 <h2 class="text-center mb-5">{% block section_title %}{% endblock %}</h2>
