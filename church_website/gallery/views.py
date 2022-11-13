@@ -39,7 +39,7 @@ def rotate_image(request, slug):
 
 class AlbumListView(ListView):
     model = Album
-    queryset = Album.objects.all()
+    queryset = Album.objects.all().filter(is_visible=True)
     context_object_name = 'albums'
     template_name = 'list.html'
 
