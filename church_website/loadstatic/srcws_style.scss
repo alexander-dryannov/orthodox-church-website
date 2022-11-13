@@ -67,12 +67,8 @@ main {
     }
 }
 // GALLERY
-.gallery-albums {
-    a {
-        img {
-            width: 16rem;
-        }
-    }
+.list-album {
+    max-width: 100%;
 }
 #my-gallery {
     display: flex;
@@ -81,10 +77,8 @@ main {
     margin-left: auto;
     margin-right: auto;
     .gallery__column {
-        text-align: center;
-        max-width: 30%;
         .gallery__image {
-            max-width: 100%;
+            width: 100%;
             padding: 0.3rem;
         }
     }

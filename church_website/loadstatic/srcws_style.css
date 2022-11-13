@@ -50,8 +50,8 @@ main .container {
   flex-direction: column;
 }
 
-.gallery-albums a img {
-  width: 16rem;
+.list-album {
+  max-width: 100%;
 }
 
 #my-gallery {
@@ -61,12 +61,8 @@ main .container {
   margin-left: auto;
   margin-right: auto;
 }
-#my-gallery .gallery__column {
-  text-align: center;
-  max-width: 30%;
-}
 #my-gallery .gallery__column .gallery__image {
-  max-width: 100%;
+  width: 100%;
   padding: 0.3rem;
 }
 

@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block section_title %}
-    {{ album.title }}
+    Альбом <b>{{ album.title }}</b>
 {% endblock %}
 
 {% block className %}
@@ -16,7 +16,7 @@
 {% block content %}
     <div class="pswp-gallery pswp-gallery--single-column row" id="my-gallery">
         {% for items in images %}
-            <div class="gallery__column col">
+            <div class="gallery__column col-sm-3">
                 {% for item in items %}
                     <a href="{{ item.src.url }}" data-pswp-width="{{ item.origin_width }}" data-pswp-height="{{ item.origin_height }}" target="_blank" class="thmb">
                         <img class="gallery__image" src="{{ item.src.url }}" alt="{{ item.slug }}" />
