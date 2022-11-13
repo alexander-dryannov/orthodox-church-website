@@ -86,7 +86,7 @@ class AlbumCreateView(LoginRequiredMixin, FormView):
 
 class AlbumUpdateView(LoginRequiredMixin, UpdateView):
     model = Album
-    template_name = 'schedule_update.html'
+    template_name = 'update.html'
     fields = '__all__'
     raise_exception = True
 
@@ -101,10 +101,3 @@ class AlbumDeleteView(LoginRequiredMixin, DeleteView):
 class AlbumImageDetailView(DetailView):
     model = AlbumImage
     template_name = 'image_detail.html'
-
-
-# class AlbumImageDeleteView(LoginRequiredMixin, DeleteView):
-#     model = AlbumImage
-#     template_name = 'image_delete.html'
-#     success_url = reverse_lazy('albums')
-#     raise_exception = True
