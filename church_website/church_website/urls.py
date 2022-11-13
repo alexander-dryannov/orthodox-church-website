@@ -11,6 +11,7 @@ urlpatterns = [
     path('news/', include('blog.urls', namespace='blog')),
     path('about/', include('about.urls', namespace='about')),
     path('schedule/', include('schedule.urls')),
+    path('search/', include('search.urls')),
 ]
 
 if settings.DEBUG:

@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'about.apps.AboutConfig',
     'schedule.apps.ScheduleConfig',
+    'search.apps.SearchConfig',
 ]
 
 MIDDLEWARE = [
