@@ -1,8 +1,9 @@
-from PIL import Image
 from io import BytesIO
 from uuid import uuid4
+
 from django.conf import settings
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from PIL import Image
 
 
 def get_new_size(size: int) -> int:
@@ -33,37 +34,41 @@ def converter(image=None, fmt=settings.CONVERTING_SAVED_IMAGE):
     ), width, height, origin_width, origin_height
 
 
-def column_calc(i: int) -> int:
-    if i % 2 == 0:
-        if i % 4 == 0:
-            return 4
-    return 3
+# Для организации колонок
+def create_image_column(images: list) -> list:
+    columns = [[], [], [], []]
+    size_data = {'width': [], 'height': []}
+    # Stage 1
+    for image in images:
+        if image.origin_width > image.origin_height:
+            size_data['width'].append(image)
+        else:
+            size_data['height'].append(image)
+    # Stage 2
+    try:
+        while True:
+            if len(size_data['height']) != 0:
+                for column in columns:
+                    image = size_data['height'].pop(-1)
+                    column.append(image)
+            else:
+                break
+    except IndexError:
+        pass
 
-
-def calc(i: int, column: int = 3) -> tuple:
-    if column == 3:
-        x = int(i / 3)
-        y = i - x
-        return x, y
-    else:
-        x = int(i / 4)
-        z = i - x
-        y = z - x
-        return x, y, z
-
-
-def create_image_column(l: list) -> list:
-    ll = len(l)
-    if ll < 6:
-        return [l]
-    elif 6 <= ll < 19:
-        x, y = calc(ll, 3)
-        return [l[:x], l[x:y], l[y:]]
-    elif ll >= 19:
-        match column_calc(ll):
-            case 4:
-                x, y, z = calc(ll, 4)
-                return [l[:x], l[x:y], l[y:z], l[z:]]
-            case 3:
-                x, y = calc(ll, 3)
-                return [l[:x], l[x:y], l[y:]]
+    for column in columns[1:]:
+        if len(column) < len(columns[0]):
+            for _ in range(2):
+                column.append(size_data['width'].pop(-1))
+    # Stage 3
+    try:
+        while True:
+            if len(size_data['width']) != 0:
+                for column in columns:
+                    image = size_data['width'].pop(-1)
+                    column.append(image)
+            else:
+                break
+    except IndexError:
+        pass
+    return columns
