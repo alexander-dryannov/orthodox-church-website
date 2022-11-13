@@ -99,10 +99,12 @@ main .container {
   margin-top: 0.5rem;
 }
 
-@media (min-width: 576px) {
-  html {
-    font-size: 0.8rem;
+@media (max-width: 576px) {
+  .footer span {
+    font-size: 1rem;
   }
+}
+@media (min-width: 576px) {
   main .container {
     padding: 0px;
     max-width: 100%;
@@ -116,6 +118,9 @@ main .container {
   }
   .card .card-body p img {
     width: 200px;
+  }
+  .footer span {
+    font-size: 1rem;
   }
 }
 @media (min-width: 768px) {

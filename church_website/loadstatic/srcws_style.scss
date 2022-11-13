@@ -120,12 +120,18 @@ main {
         }
     }
 }
+
+@media (max-width: 576px) {
+    .footer {
+        span {
+            font-size: 1rem;
+        }
+    }
+}
+
 // Small devices (landscape phones, 576px and up)
 
 @media (min-width: 576px) {
-    html {
-        font-size: 0.8rem;
-    }
     main {
         .container {
             padding: 0px;
@@ -142,6 +148,11 @@ main {
                     width: 200px;
                 }
             }
+        }
+    }
+    .footer {
+        span {
+            font-size: 1rem;
         }
     }
 }
