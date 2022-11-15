@@ -9,15 +9,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row justify-content-evenly">
+    <ul class="gallery-list">
         {% for album in albums %}
-            {% if album.is_visible %}
-                <div class="col align-self-center">
+            <li>
+                <figure>
                     <a href="{{ album.get_absolute_url }}">
-                        <img class="list-album" src="{{ album.cover.url }}" alt="{{ album.title }}">
+                        <img src="{{ album.cover.url }}" alt="{{ album.title }}" />
                     </a>
-                </div>
-            {% endif %}
+                </figure>
+            </li>
         {% endfor %}
-    </div>
+    </ul>
 {% endblock %}
