@@ -9,25 +9,6 @@
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-    {% if albums %}
-        <div class="row justify-content-evenly">
-            {% for album in albums %}
-                {% if album.is_visible %}
-                    <div class="col align-self-center">
-                        <a href="{{ album.get_absolute_url }}">
-                            <img class="list-album" src="{{ album.cover.url }}" alt="{{ album.title }}">
-                        </a>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    {% else %}
-        <div class="list-group mt-5 mx-auto w-50 text-center">
-            <p class="alert alert-secondary">Альбомов пока нет.</p>
-        </div>
-    {% endif %}
-=======
     <ul class="gallery-list">
         {% for album in albums %}
             <li>
@@ -39,5 +20,4 @@
             </li>
         {% endfor %}
     </ul>
->>>>>>> galleryapp
 {% endblock %}
