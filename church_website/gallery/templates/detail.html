@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block custom_css %}
-    <link rel="stylesheet" href="{% static 'pswp/photoswipe.css' %}">
+    <link rel="stylesheet" href="{% static 'lightbox2/dist/css/lightbox.min.css' %}">
 {% endblock %}
 
 {% block section_title %}
@@ -10,31 +10,24 @@
 {% endblock %}
 
 {% block className %}
-    "gallery-album-detail"
+    "gallery"
 {% endblock %}
 
 {% block content %}
-    <div class="pswp-gallery pswp-gallery--single-column row" id="my-gallery">
-        {% for items in images %}
-            <div class="gallery__column col-sm-3">
-                {% for item in items %}
-                    <a href="{{ item.src.url }}" data-pswp-width="{{ item.origin_width }}" data-pswp-height="{{ item.origin_height }}" target="_blank" class="thmb">
-                        <img class="gallery__image" src="{{ item.src.url }}" alt="{{ item.slug }}" />
-                    </a>
-                {% endfor %}
-            </div>
+    <ul class="gallery__list">
+        {% for image in images %}
+        <li>
+            <figure>
+                <a href="{{ image.src.url }}" data-lightbox="roadtrip">
+                    <img src="{{ image.src.url }}" alt="{{ image.slug }}" />
+                </a>
+            </figure>
+        </li>
         {% endfor %}
-    </div>
+    </ul>
 {% endblock %}
 
 {% block custom_js %}
-    <script type="module">
-        import Lightbox from "{% static 'pswp/photoswipe-lightbox.esm.min.js' %}";
-        const lightbox = new Lightbox({
-        gallery: '#my-gallery',
-        children: 'a',
-        pswpModule: () => import("{% static 'pswp/photoswipe.esm.min.js' %}")
-        });
-        lightbox.init();
-    </script>
+        <script src="{% static 'lightbox2/dist/js/lightbox.min.js' %}"></script>
+        <script src="{% static 'lightbox2/dist/js/lightbox-plus-jquery.min.js' %}"></script>
 {% endblock %}

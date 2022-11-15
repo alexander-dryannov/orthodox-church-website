@@ -5,7 +5,7 @@ from .views import (
     AlbumDetailView,
     AlbumUpdateView,
     AlbumDeleteView,
-    AlbumImageDetailView
+    AlbumImageDetailView,
     )
 
 from .views import rotate_image

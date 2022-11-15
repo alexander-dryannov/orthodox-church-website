@@ -54,16 +54,32 @@ main .container {
   max-width: 100%;
 }
 
-#my-gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
+.gallery .gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-rows: repeat(6, 200px);
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
 }
-#my-gallery .gallery__column .gallery__image {
+.gallery .gallery__list li {
+  list-style: none;
+}
+.gallery .gallery__list li figure {
+  height: 100%;
+}
+.gallery .gallery__list li figure a img {
   width: 100%;
-  padding: 0.3rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gallery .gallery__list li:nth-child(4n) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gallery .gallery__list li:nth-child(8n) {
+  grid-column: span 3;
+  grid-row: span 3;
 }
 
 .footer {
