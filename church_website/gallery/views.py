@@ -5,7 +5,6 @@ from .forms import AlbumForm
 from django.conf import settings
 from django.urls import reverse_lazy
 from .models import Album, AlbumImage
-from .handlers import create_image_column
 from django.shortcuts import HttpResponse
 from django.views.generic.edit import FormView
 from django.views.decorators.csrf import csrf_exempt
@@ -51,10 +50,6 @@ class AlbumDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['images'] = AlbumImage.objects.filter(album=self.object.id)
-        ctx = create_image_column(context['images'])
-        context['images'] = ctx
-        context['obj'] = self.get_object()
-        context['detail'] = True
         return context
 
 
