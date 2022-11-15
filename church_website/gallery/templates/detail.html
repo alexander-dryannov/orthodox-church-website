@@ -14,15 +14,15 @@
 {% endblock %}
 
 {% block content %}
-    <ul class="gallery__list">
+    <ul class="gallery-list">
         {% for image in images %}
-        <li>
-            <figure>
-                <a href="{{ image.src.url }}" data-lightbox="roadtrip">
-                    <img src="{{ image.src.url }}" alt="{{ image.slug }}" />
-                </a>
-            </figure>
-        </li>
+            <li>
+                <figure>
+                    <a href="{{ image.src.url }}" data-lightbox="roadtrip">
+                        <img src="{{ image.src.url }}" alt="{{ image.slug }}" />
+                    </a>
+                </figure>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

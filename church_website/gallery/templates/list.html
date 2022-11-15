@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
     {% if albums %}
         <div class="row justify-content-evenly">
             {% for album in albums %}
@@ -26,4 +27,17 @@
             <p class="alert alert-secondary">Альбомов пока нет.</p>
         </div>
     {% endif %}
+=======
+    <ul class="gallery-list">
+        {% for album in albums %}
+            <li>
+                <figure>
+                    <a href="{{ album.get_absolute_url }}">
+                        <img src="{{ album.cover.url }}" alt="{{ album.title }}" />
+                    </a>
+                </figure>
+            </li>
+        {% endfor %}
+    </ul>
+>>>>>>> galleryapp
 {% endblock %}
