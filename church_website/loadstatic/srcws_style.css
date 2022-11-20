@@ -4,6 +4,16 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("../static/fonts/Anonymous_Pro/AnonymousPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+h2, h3, h4, h5, h6 {
+  font-family: "Anonymous Pro", monospace;
+}
+
 html {
   height: 100%;
 }

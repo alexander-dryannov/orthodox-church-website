@@ -1,3 +1,4 @@
+# Prod
 run:
 	python manage.py runserver --settings=church_website.settings.pro
 
@@ -8,7 +9,7 @@ makemigrate:
 	python manage.py makemigrations --settings=church_website.settings.pro
 
 cstatic:
-	python manage.py collectstatic --settings=church_website.settings.local
+	python manage.py collectstatic --settings=church_website.settings.pro
 
 add-admin:
 	python manage.py createsuperuser --settings=church_website.settings.pro
@@ -16,6 +17,7 @@ add-admin:
 check-deploy-prod:
 	python manage.py check --deploy --settings=church_website.settings.pro
 
+# Local
 run-dev:
 	python manage.py runserver --settings=church_website.settings.local
 
@@ -27,3 +29,6 @@ makemigrate-dev:
 
 add-admin-dev:
 	python manage.py createsuperuser --settings=church_website.settings.local
+
+cstatic-dev:
+	python manage.py collectstatic --settings=church_website.settings.local

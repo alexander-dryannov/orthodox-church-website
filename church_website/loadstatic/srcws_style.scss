@@ -59,6 +59,7 @@ main {
     }
 }
 
+
 // BLOG
 .post-create {
     #div_id_content {
@@ -89,7 +90,6 @@ main {
             height: 100%;
             a {
                 img {
-                    // max-width: 50%;
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -130,7 +130,6 @@ main {
 }
 
 // Small devices (landscape phones, 576px and up)
-
 @media (min-width: 576px) {
     .admin-panel {
         width: 95%;
