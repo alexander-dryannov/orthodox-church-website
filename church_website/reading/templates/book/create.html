@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block section_title %}
+    Создание книги
+{% endblock %}
+
+{% block className %}
+    "book-create"
+{% endblock %}
+
+{% block content %}
+    <form class="w-75 mx-auto" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form|crispy }}
+        <a href="{% url 'reading:books' %}" class="btn btn-secondary">Отмена</a>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}

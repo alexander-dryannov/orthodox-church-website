@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block section_title %}
+    Вы действительно хотите удалить главу <b>{{ chapter.title}}</b>?
+{% endblock %}
+
+{% block className %}
+    "chapter-delete"
+{% endblock %}
+
+{% block content %}
+    <div class="row text-center">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <a href="{{ chapter.get_absolute_url }}" class="btn btn-secondary">Отмена</a>
+            <button type="submit" class="btn btn-danger">Удалить</button>
+        </form>
+    </div>
+{% endblock %}

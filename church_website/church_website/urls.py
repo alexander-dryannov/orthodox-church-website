@@ -12,6 +12,7 @@ urlpatterns = [
     path('about/', include('about.urls', namespace='about')),
     path('schedule/', include('schedule.urls')),
     path('search/', include('search.urls')),
+    path('library/', include('reading.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block section_title %}
+    Список книг
+{% endblock %}
+
+{% block className %}
+    "book-list"
+{% endblock %}
+
+{% block content %}
+    {% for book in books %}
+        <a href="{{ book.get_absolute_url}}">{{ book.title }}</a>
+    {% endfor %}
+{% endblock %}

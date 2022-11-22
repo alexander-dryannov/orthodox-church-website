@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'schedule.apps.ScheduleConfig',
     'search.apps.SearchConfig',
+    'reading.apps.ReadingConfig',
 ]
 
 MIDDLEWARE = [

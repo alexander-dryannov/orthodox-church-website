@@ -6,6 +6,24 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Tribuno';
+    src: url('../static/fonts/Tribuno.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('../static/fonts/Rubik.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, li, button {
+    font-family: Rubik;
+}
+
 // COLORS
 $violet: #5f27cd;
 $gold: #fed330;
@@ -97,6 +115,10 @@ main {
             }
         }
     }
+}
+// READING
+.num {
+    color: #ff3838;
 }
 
 // FOOTER

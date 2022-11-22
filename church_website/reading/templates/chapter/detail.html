@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block section_title %}
+    Глава <b>{{ chapter.chapter }}</b>
+{% endblock %}
+
+{% block className %}
+    "chapter-detail"
+{% endblock %}
+
+{% block content %}
+    <div class="mb-3 d-flex flex-column">
+        <label for="text-range" class="form-label mx-auto">Изменить размер шрифта</label>
+        <input type="range" class="form-range w-50 mx-auto" min="1" max="4" step="0.2" id="text-range" value="1">
+    </div>
+    <div class="card mb-5 mx-auto p-0 border-0">
+        <div class="card-body">
+            <p class="card-text">{{ chapter.text | safe }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_js %}
+    <script>
+        // RESIZE TEXT
+
+        const text = document.querySelector(".card-body")
+        const input = document.querySelector(".form-range")
+
+        input.addEventListener("change", function font() {
+            let value = input.value;
+            text.style.fontSize = `${value}rem`;
+        });
+    </script>
+{% endblock %}

@@ -5,13 +5,19 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Anonymous Pro";
-  src: url("../static/fonts/Anonymous_Pro/AnonymousPro-Regular.ttf") format("truetype");
+  font-family: "Tribuno";
+  src: url("../static/fonts/Tribuno.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-h2, h3, h4, h5, h6 {
-  font-family: "Anonymous Pro", monospace;
+@font-face {
+  font-family: "Rubik";
+  src: url("../static/fonts/Rubik.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+p, a, h1, h2, h3, h4, h5, h6, li, button {
+  font-family: Rubik;
 }
 
 html {
@@ -87,6 +93,10 @@ main .container {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.num {
+  color: #ff3838;
 }
 
 .footer {

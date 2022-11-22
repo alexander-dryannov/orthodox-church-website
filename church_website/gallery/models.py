@@ -51,12 +51,15 @@ class Album(BaseModel):
 
 
 class AlbumImage(BaseModel):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='album')
+    album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, related_name='album')
     src = models.ImageField('Изображение', blank=True, upload_to='album_images')
     origin_height = models.PositiveIntegerField('Оригинальная высота', blank=True, default=0)
     origin_width = models.PositiveIntegerField('Оригинальная ширина', blank=True, default=0)
-    height = models.PositiveIntegerField('Относительная высота', blank=True, default=0)
-    width = models.PositiveIntegerField('Относительная ширина', blank=True, default=0)
+    height = models.PositiveIntegerField(
+        'Относительная высота', blank=True, default=0)
+    width = models.PositiveIntegerField(
+        'Относительная ширина', blank=True, default=0)
 
     def save(self, *args, **kwargs):
         if self.src:

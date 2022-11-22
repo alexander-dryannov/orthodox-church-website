@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block section_title %}
+    Книга <b>{{ book.title }}</b>
+{% endblock %}
+
+{% block className %}
+    "book-detail"
+{% endblock %}
+
+{% block content %}
+    <div class="list-group">
+        {% for chapter in chapters %}
+            <a href="{{ chapter.get_absolute_url }}" class="list-group-item list-group-item-action">{{ chapter.chapter }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
