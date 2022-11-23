@@ -77,6 +77,11 @@ main {
     }
 }
 
+// TAG
+.list-tags {
+    max-width: 100%;
+    width: 50%;
+}
 
 // BLOG
 .post-create {
@@ -144,6 +149,9 @@ main {
     .admin-panel {
         width: 95%;
     }
+    .list-tags {
+        width: 95%;
+    }
     .footer {
         span {
             font-size: 1rem;
@@ -161,6 +169,9 @@ main {
             padding: 0px;
             max-width: 100%;
         }
+    }
+    .list-tags {
+        width: 95%;
     }
     .card {
         max-width: 100%;
@@ -191,6 +202,9 @@ main {
             padding: 0px;
         }
     }
+    .list-tags {
+        width: 95%;
+    }
     .card {
         max-width: 100%;
         width: 80%;
@@ -201,6 +215,9 @@ main {
 @media (min-width: 992px) {
     .admin-panel {
         width: 65%;
+    }
+    .list-tags {
+        width: 75%;
     }
     main {
         .container {

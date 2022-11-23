@@ -61,6 +61,11 @@ main .container {
   padding: 1rem;
 }
 
+.list-tags {
+  max-width: 100%;
+  width: 50%;
+}
+
 .post-create #div_id_content {
   display: flex;
   flex-direction: column;
@@ -120,6 +125,9 @@ main .container {
   .admin-panel {
     width: 95%;
   }
+  .list-tags {
+    width: 95%;
+  }
   .footer span {
     font-size: 1rem;
   }
@@ -131,6 +139,9 @@ main .container {
   main .container {
     padding: 0px;
     max-width: 100%;
+  }
+  .list-tags {
+    width: 95%;
   }
   .card {
     max-width: 100%;
@@ -153,6 +164,9 @@ main .container {
   main .container {
     padding: 0px;
   }
+  .list-tags {
+    width: 95%;
+  }
   .card {
     max-width: 100%;
     width: 80%;
@@ -161,6 +175,9 @@ main .container {
 @media (min-width: 992px) {
   .admin-panel {
     width: 65%;
+  }
+  .list-tags {
+    width: 75%;
   }
   main .container {
     max-width: 90%;
