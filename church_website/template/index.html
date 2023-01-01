@@ -54,6 +54,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'about:contacts' %}">Контакты</a>
                         </li>
+                        {% if user.is_authenticated %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'account_logout' %}">Выйти</a>
+							</li>
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'account_login' %}">Войти</a>
+							</li>
+						{% endif %}
+
                     </ul>
                     <form class="d-flex" role="search" method="get" action="{% url 'search:search' %}">
                         <input class="form-control me-2" type="search" placeholder="Поиск по сайту" aria-label="Search" name="search">
