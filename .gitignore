@@ -339,3 +339,4 @@ pip-selfcheck.json
 
 # Ignore code-workspaces
 *.code-workspace
+.idea/
